@@ -1,11 +1,7 @@
-import React from "react";
+import Main from "components/Main";
 
-type Props = {
-  name: string;
-};
-
-const Home: React.FC<Props> = () => {
-  return <div></div>;
+const Home = () => {
+  return <Main />;
 };
 
 export default Home;

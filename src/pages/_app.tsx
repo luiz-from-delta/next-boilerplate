@@ -1,12 +1,25 @@
-import React from "react";
+import { AppProps } from "next/app";
+import Head from "next/head";
+import { Fragment } from "react";
 
-type Props = {
-  Component: React.FC;
-  pageProps: Record<string, string>;
+import GlobalStyles from "styles/global";
+
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <Fragment>
+      <Head>
+        <title>React Avançado - Boilerplate</title>
+        <link rel="shortcut icon" href="/img/icon-512.png" />
+        <link rel="apple-touch-icon" href="/img/icon-512.png" />
+        <meta
+          name="description"
+          content="A simple starter project to work with TypeScript, React, NextJS and StyledComponents"
+        />
+      </Head>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </Fragment>
+  );
 };
 
-function MyApp({ Component, pageProps }: Props) {
-  return <Component {...pageProps} />;
-}
-
-export default MyApp;
+export default App;
